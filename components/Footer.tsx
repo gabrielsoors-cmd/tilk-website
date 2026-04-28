@@ -46,7 +46,7 @@ export default function Footer({ lang }: FooterProps) {
               <li><Link href={`${basePath}/compare`} className="text-gray-400 hover:text-primary transition">{lang === 'sv' ? 'Jämför' : 'Compare'}</Link></li>
               <li>
                 
-                  href="https://apps.apple.com/app/id6748013897"
+                <a href="https://apps.apple.com/app/id6748013897"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-gray-400 hover:text-primary transition"
