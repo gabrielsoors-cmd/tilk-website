@@ -104,3 +104,4 @@ export default function Features({ lang }: FeaturesProps) {
     </section>
   )
 }
+
