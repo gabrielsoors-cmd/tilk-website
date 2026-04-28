@@ -38,9 +38,16 @@ export default function Features({ lang }: FeaturesProps) {
       titleEl.style.opacity = '0'
       titleEl.style.transform = 'translateY(20px)'
       titleEl.style.transition = 'opacity 0.7s ease, transform 0.7s ease'
-      const obs = new IntersectionObserver(([e]) => {
-        if (e.isIntersecting) { titleEl.style.opacity = '1'; titleEl.style.transform = 'translateY(0)'; obs.disconnect() }
-      }, { threshold: 0.3 })
+      const obs = new IntersectionObserver(
+        ([e]) => {
+          if (e.isIntersecting) {
+            titleEl.style.opacity = '1'
+            titleEl.style.transform = 'translateY(0)'
+            obs.disconnect()
+          }
+        },
+        { threshold: 0.3 }
+      )
       obs.observe(titleEl)
     }
 
@@ -50,19 +57,24 @@ export default function Features({ lang }: FeaturesProps) {
       card.style.transform = 'translateY(32px)'
       card.style.transition = 'opacity 0.6s ease, transform 0.6s ease'
     })
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const card = entry.target as HTMLDivElement
-          const index = cards.indexOf(card)
-          setTimeout(() => {
-            card.style.opacity = '1'
-            card.style.transform = 'translateY(0)'
-          }, index * 120)
-          observer.unobserve(card)
-        }
-      })
-    }, { threshold: 0.15 })
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const card = entry.target as HTMLDivElement
+            const index = cards.indexOf(card)
+            setTimeout(() => {
+              card.style.opacity = '1'
+              card.style.transform = 'translateY(0)'
+            }, index * 120)
+            observer.unobserve(card)
+          }
+        })
+      },
+      { threshold: 0.15 }
+    )
+
     cards.forEach((card) => observer.observe(card))
     return () => observer.disconnect()
   }, [])
