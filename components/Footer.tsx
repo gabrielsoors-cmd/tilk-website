@@ -49,9 +49,12 @@ export default function Footer({ lang }: FooterProps) {
                 <a href="https://apps.apple.com/se/app/tilk/id6759267312"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-gray-400 hover:text-primary transition"
                 >
-                  
+                  <img
+                    src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                    alt={lang === 'sv' ? 'Ladda ned på App Store' : 'Download on the App Store'}
+                    className="h-8 hover:opacity-80 transition"
+                  />
                 </a>
               </li>
             </ul>
