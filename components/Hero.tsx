@@ -94,14 +94,14 @@ export default function Hero({ lang }: HeroProps) {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
               
-                href="#pricing"
+              <a href="#pricing"
                 className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary/90 transition shadow-glow"
               >
                 {t.cta}
                 <span>→</span>
-              </a>
+             </a>
               
-                href="https://apps.apple.com/app/id6748013897"
+              <a href="https://apps.apple.com/app/id6748013897"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-white/5 border border-white/10 text-white px-5 py-3 rounded-full hover:bg-white/10 hover:border-white/20 transition duration-200 group"
