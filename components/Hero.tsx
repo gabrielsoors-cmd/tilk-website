@@ -101,20 +101,15 @@ export default function Hero({ lang }: HeroProps) {
                 <span>→</span>
              </a>
               
-              <a href="https://apps.apple.com/app/id6748013897"
+              <a href="https://apps.apple.com/se/app/tilk/id6759267312"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-white/5 border border-white/10 text-white px-5 py-3 rounded-full hover:bg-white/10 hover:border-white/20 transition duration-200 group"
               >
-                <svg className="w-5 h-5 text-white" viewBox="0 0 814 1000" fill="currentColor">
-                  <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-42.4-150.3-109.7C79.6 728.1 32 583.3 32 443.8c0-234 152.5-360 300.8-360 79.6 0 146 52.5 196.1 52.5 47.8 0 122.4-55.7 211.5-55.7.8 0 1.6 0 2.4.1zm-174.2-120.5c37.1-44.2 63.1-105.5 63.1-166.8 0-8.5-.8-17.1-2.4-24.3-59.8 2.4-130.4 40.2-173.6 89.6-33.5 37.8-65.7 99-65.7 161.1 0 9.3 1.6 18.6 2.4 21.6 3.2.8 8.5 1.6 13.7 1.6 54.2 0 119.4-36.3 162.5-83.8z" />
-                </svg>
-                <div className="text-left">
-                  <div className="text-[10px] text-white/60 leading-none">
-                    {lang === 'sv' ? 'Ladda ned på' : 'Download on the'}
-                  </div>
-                  <div className="text-sm font-semibold leading-tight">App Store</div>
-                </div>
+                <img
+                  src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                  alt={lang === 'sv' ? 'Ladda ned på App Store' : 'Download on the App Store'}
+                  className="h-12 hover:opacity-80 transition"
+                />
               </a>
             </div>
           </div>
