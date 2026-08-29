@@ -53,7 +53,7 @@ export default function Footer({ lang }: FooterProps) {
             <Image src="/images/tilk-icon.svg" alt="Tilk" width={40} height={40} className="mb-3 sm:mb-4" />
             <p className="font-genty text-primary italic text-base sm:text-lg mb-2 sm:mb-3">{t.tagline}</p>
             <p className="text-sm sm:text-base text-gray-500 max-w-xs mb-5 sm:mb-6">{t.description}</p>
-            
+            <a
               href="https://apps.apple.com/se/app/tilk/id6759267312"
               target="_blank"
               rel="noopener noreferrer"
