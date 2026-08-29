@@ -57,46 +57,45 @@ export default function Hero({ lang }: HeroProps) {
   }, [t.tagline])
 
   return (
-    <section className="relative pt-32 pb-24 px-6 overflow-hidden bg-background">
-      {/* Subtil blå glow-blob i bakgrunden, i stil med Wispr Flows "levande" känsla */}
-      <div className="absolute -top-32 -right-32 w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/3 -left-40 w-[400px] h-[400px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+    <section className="relative pt-24 pb-14 px-4 sm:pt-28 sm:px-6 lg:pt-32 lg:pb-24 overflow-hidden bg-background">
+      <div className="absolute -top-20 -right-20 w-[280px] h-[280px] sm:w-[500px] sm:h-[500px] bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 -left-24 w-[220px] h-[220px] sm:w-[400px] sm:h-[400px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
-            className="text-center lg:text-left"
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className="text-center lg:text-left order-2 lg:order-1"
           >
             <Image
               src="/images/tilk-logo-text.svg"
               alt="Tilk"
-              width={160}
-              height={54}
-              className="mb-8 mx-auto lg:mx-0"
+              width={140}
+              height={48}
+              className="mb-6 sm:mb-8 mx-auto lg:mx-0"
             />
 
-            <p className="text-2xl italic text-primary/70 mb-6 min-h-[2rem] font-genty">
+            <p className="text-xl sm:text-2xl italic text-primary/70 mb-4 sm:mb-6 min-h-[1.75rem] font-genty">
               {displayedTagline}
               {!typingDone && (
-                <span className="inline-block w-0.5 h-6 bg-primary ml-0.5 align-middle animate-pulse" />
+                <span className="inline-block w-0.5 h-5 sm:h-6 bg-primary ml-0.5 align-middle animate-pulse" />
               )}
             </p>
 
-            <h1 className="font-genty text-5xl lg:text-6xl font-medium mb-6 leading-tight text-gray-900">
+            <h1 className="font-genty text-3xl sm:text-4xl lg:text-6xl font-medium mb-4 sm:mb-6 leading-tight text-gray-900">
               {t.headline}
             </h1>
 
-            <p className="text-xl text-gray-600 mb-10 max-w-xl mx-auto lg:mx-0">
+            <p className="text-base sm:text-xl text-gray-600 mb-8 sm:mb-10 max-w-xl mx-auto lg:mx-0">
               {t.description}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start items-stretch sm:items-center">
               
                 href="#pricing"
-                className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary/90 transition-all hover:shadow-lg hover:shadow-primary/30"
+                className="inline-flex items-center justify-center gap-2 bg-primary text-white px-6 py-3.5 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-primary/90 transition-all hover:shadow-lg hover:shadow-primary/30"
               >
                 {t.cta}
                 <span>→</span>
@@ -106,28 +105,29 @@ export default function Hero({ lang }: HeroProps) {
                 href="https://apps.apple.com/se/app/tilk/id6759267312"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="flex justify-center"
               >
                 <img
                   src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
                   alt={t.appStoreAlt}
-                  className="h-12 hover:opacity-80 transition"
+                  className="h-11 sm:h-12 hover:opacity-80 transition"
                 />
               </a>
             </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
+            initial={{ opacity: 0, scale: 0.97 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-            className="relative"
+            transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
+            className="relative order-1 lg:order-2 max-w-[280px] sm:max-w-sm lg:max-w-none mx-auto"
           >
             <Image
               src="/images/tilk-templates-mockup.png"
               alt="Tilk Templates"
               width={600}
               height={800}
-              className="mx-auto rounded-3xl shadow-2xl shadow-primary/10"
+              className="mx-auto rounded-3xl shadow-2xl shadow-primary/10 w-full h-auto"
               priority
             />
           </motion.div>
