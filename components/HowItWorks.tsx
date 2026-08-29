@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { motion } from 'framer-motion'
 
 interface HowItWorksProps {
   lang: 'sv' | 'en'
@@ -9,83 +9,98 @@ interface HowItWorksProps {
 export default function HowItWorks({ lang }: HowItWorksProps) {
   const content = {
     sv: {
-      title: 'Så funkar det',
-      subtitle: 'Från möte till beslut på sekunder.',
+      eyebrow: 'Så funkar det',
+      title: 'Från möte till beslut på sekunder',
+      subtitle: 'Ingen inlärningskurva. Tryck, prata, klart.',
       steps: [
-        { number: '1', title: 'Spela in', description: 'Tryck på record-knappen. Tilk lyssnar medan du är närvarande.' },
-        { number: '2', title: 'Transkribera', description: 'AI transkriberar automatiskt till perfekt svensk text.' },
-        { number: '3', title: 'Sammanfatta', description: 'Få strukturerade sammanfattningar, beslut och action items direkt.' },
+        {
+          number: '1',
+          title: 'Spela in',
+          description: 'Tryck på record-knappen på iPhone eller Apple Watch. Tilk lyssnar medan du är närvarande – inga anteckningar behövs.',
+        },
+        {
+          number: '2',
+          title: 'Transkribera',
+          description: 'AI transkriberar automatiskt till perfekt svensk text, oavsett om mötet hölls fysiskt eller digitalt.',
+        },
+        {
+          number: '3',
+          title: 'Sammanfatta',
+          description: 'Få strukturerade sammanfattningar, beslut och action items direkt – redigerbara och redo att dela.',
+        },
       ],
     },
     en: {
-      title: 'How it works',
-      subtitle: 'From meeting to action in seconds.',
+      eyebrow: 'How it works',
+      title: 'From meeting to action in seconds',
+      subtitle: 'No learning curve. Tap, talk, done.',
       steps: [
-        { number: '1', title: 'Record', description: 'Hit the record button. Tilk listens while you stay present.' },
-        { number: '2', title: 'Transcribe', description: 'AI automatically transcribes to perfect Swedish text.' },
-        { number: '3', title: 'Summarize', description: 'Get structured summaries, decisions and action items instantly.' },
+        {
+          number: '1',
+          title: 'Record',
+          description: 'Hit the record button on your iPhone or Apple Watch. Tilk listens while you stay present – no note-taking needed.',
+        },
+        {
+          number: '2',
+          title: 'Transcribe',
+          description: 'AI automatically transcribes to perfect Swedish text, whether the meeting was in-person or digital.',
+        },
+        {
+          number: '3',
+          title: 'Summarize',
+          description: 'Get structured summaries, decisions and action items instantly – editable and ready to share.',
+        },
       ],
     },
   }
 
   const t = content[lang]
-  const stepRefs = useRef<(HTMLDivElement | null)[]>([])
-  const titleRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const titleEl = titleRef.current
-    if (titleEl) {
-      titleEl.style.opacity = '0'
-      titleEl.style.transform = 'translateY(20px)'
-      titleEl.style.transition = 'opacity 0.7s ease, transform 0.7s ease'
-      const obs = new IntersectionObserver(([e]) => {
-        if (e.isIntersecting) { titleEl.style.opacity = '1'; titleEl.style.transform = 'translateY(0)'; obs.disconnect() }
-      }, { threshold: 0.3 })
-      obs.observe(titleEl)
-    }
-
-    const steps = stepRefs.current.filter(Boolean) as HTMLDivElement[]
-    steps.forEach((step) => {
-      step.style.opacity = '0'
-      step.style.transform = 'translateY(36px)'
-      step.style.transition = 'opacity 0.65s ease, transform 0.65s ease'
-    })
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const step = entry.target as HTMLDivElement
-          const index = steps.indexOf(step)
-          setTimeout(() => {
-            step.style.opacity = '1'
-            step.style.transform = 'translateY(0)'
-          }, index * 160)
-          observer.unobserve(step)
-        }
-      })
-    }, { threshold: 0.2 })
-    steps.forEach((step) => observer.observe(step))
-    return () => observer.disconnect()
-  }, [])
 
   return (
-    <section className="py-20 px-6 bg-dark">
+    <section className="py-24 px-6 bg-white">
       <div className="max-w-5xl mx-auto">
-        <div ref={titleRef}>
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">{t.title}</h2>
-          <p className="text-xl text-gray-400 text-center mb-16">{t.subtitle}</p>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="text-center mb-16"
+        >
+          <span className="inline-block text-sm font-semibold text-primary tracking-wide uppercase mb-3">
+            {t.eyebrow}
+          </span>
+          <h2 className="font-genty text-4xl md:text-5xl font-medium text-gray-900 mb-4">
+            {t.title}
+          </h2>
+          <p className="text-xl text-gray-600">{t.subtitle}</p>
+        </motion.div>
+
         <div className="grid md:grid-cols-3 gap-12">
           {t.steps.map((step, i) => (
-            <div key={i} ref={(el) => { stepRefs.current[i] = el }} className="text-center relative">
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 36 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.55, delay: i * 0.15, ease: 'easeOut' }}
+              className="text-center relative"
+            >
               {i < t.steps.length - 1 && (
-                <div className="hidden md:block absolute top-8 left-[calc(50%+2rem)] w-[calc(100%-4rem)] h-0.5 bg-gradient-to-r from-primary to-primary/20 z-0" />
+                <motion.div
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.6, delay: i * 0.15 + 0.3, ease: 'easeOut' }}
+                  style={{ transformOrigin: 'left' }}
+                  className="hidden md:block absolute top-8 left-[calc(50%+2rem)] w-[calc(100%-4rem)] h-0.5 bg-gradient-to-r from-primary to-primary/10 z-0"
+                />
               )}
-              <div className="relative w-16 h-16 bg-gradient-to-br from-primary to-primary/60 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-glow">
+              <div className="relative w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-semibold mx-auto mb-6 shadow-lg shadow-primary/20">
                 {step.number}
               </div>
-              <h3 className="text-2xl font-bold mb-3">{step.title}</h3>
-              <p className="text-gray-400 leading-relaxed">{step.description}</p>
-            </div>
+              <h3 className="text-2xl font-semibold mb-3 text-gray-900">{step.title}</h3>
+              <p className="text-gray-600 leading-relaxed">{step.description}</p>
+            </motion.div>
           ))}
         </div>
       </div>
