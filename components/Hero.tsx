@@ -93,7 +93,7 @@ export default function Hero({ lang }: HeroProps) {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start items-stretch sm:items-center">
-              
+              <a
                 href="#pricing"
                 className="inline-flex items-center justify-center gap-2 bg-primary text-white px-6 py-3.5 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-primary/90 transition-all hover:shadow-lg hover:shadow-primary/30"
               >
@@ -101,7 +101,7 @@ export default function Hero({ lang }: HeroProps) {
                 <span>→</span>
               </a>
 
-              
+              <a
                 href="https://apps.apple.com/se/app/tilk/id6759267312"
                 target="_blank"
                 rel="noopener noreferrer"
