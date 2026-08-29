@@ -57,7 +57,7 @@ export default function Hero({ lang }: HeroProps) {
   }, [t.tagline])
 
   return (
-    <section className="relative pt-24 pb-14 px-4 sm:pt-28 sm:px-6 lg:pt-32 lg:pb-24 overflow-hidden bg-background">
+    <section className="relative pt-20 pb-10 px-4 sm:pt-28 sm:px-6 lg:pt-32 lg:pb-24 overflow-hidden bg-background">
       <div className="absolute -top-20 -right-20 w-[280px] h-[280px] sm:w-[500px] sm:h-[500px] bg-primary/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-1/3 -left-24 w-[220px] h-[220px] sm:w-[400px] sm:h-[400px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -67,14 +67,14 @@ export default function Hero({ lang }: HeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="text-center lg:text-left order-2 lg:order-1"
+            className="text-center lg:text-left"
           >
             <Image
               src="/images/tilk-logo-text.svg"
               alt="Tilk"
-              width={140}
-              height={48}
-              className="mb-6 sm:mb-8 mx-auto lg:mx-0"
+              width={100}
+              height={34}
+              className="mb-3 sm:mb-8 mx-auto lg:mx-0"
             />
 
             <p className="text-xl sm:text-2xl italic text-primary/70 mb-4 sm:mb-6 min-h-[1.75rem] font-genty">
@@ -120,7 +120,7 @@ export default function Hero({ lang }: HeroProps) {
             initial={{ opacity: 0, scale: 0.97 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
-            className="relative order-1 lg:order-2 max-w-[280px] sm:max-w-sm lg:max-w-none mx-auto"
+            className="relative max-w-[200px] sm:max-w-sm lg:max-w-none mx-auto mt-8 lg:mt-0"
           >
             <Image
               src="/images/tilk-templates-mockup.png"
