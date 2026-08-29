@@ -1,6 +1,23 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
 import './globals.css'
+import { Fraunces } from 'next/font/google'
+
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  weight: ['500', '600'],
+  style: ['normal', 'italic'],
+  variable: '--font-genty',
+  display: 'swap',
+})
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="sv" className={fraunces.variable}>
+      <body>{children}</body>
+    </html>
+  )
+}
 
 export const metadata: Metadata = {
   title: 'Tilk – Say it.',
