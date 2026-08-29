@@ -29,16 +29,16 @@ export default function Navbar() {
           : 'bg-transparent border-b border-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
         <Link href={isEnglish ? '/en' : '/'} className="flex items-center">
-          <Image src="/images/tilk-icon.svg" alt="Tilk" width={36} height={36} />
+          <Image src="/images/tilk-icon.svg" alt="Tilk" width={32} height={32} className="sm:w-9 sm:h-9" />
         </Link>
 
-        <div className="flex items-center gap-3">
-          <span className="text-sm text-gray-500 hidden sm:inline">Language:</span>
+        <div className="flex items-center gap-2 sm:gap-3">
+          <span className="text-xs sm:text-sm text-gray-500 hidden md:inline">Language:</span>
           <Link
             href={pathname === '/en' ? '/' : pathname.replace('/en', '') || '/'}
-            className={`text-sm transition ${
+            className={`text-xs sm:text-sm transition py-2 ${
               !isEnglish ? 'text-primary font-semibold' : 'text-gray-500 hover:text-gray-900'
             }`}
           >
@@ -47,7 +47,7 @@ export default function Navbar() {
           <span className="text-gray-300">|</span>
           <Link
             href={pathname === '/' ? '/en' : `/en${pathname}`}
-            className={`text-sm transition ${
+            className={`text-xs sm:text-sm transition py-2 ${
               isEnglish ? 'text-primary font-semibold' : 'text-gray-500 hover:text-gray-900'
             }`}
           >
