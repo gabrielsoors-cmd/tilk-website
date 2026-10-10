@@ -5,6 +5,8 @@ import UseCases from '@/components/UseCases'
 import HowItWorks from '@/components/HowItWorks'
 import Trust from '@/components/Trust'
 import PricingTeaser from '@/components/PricingTeaser'
+import FAQ from '@/components/FAQ'
+import ClosingCTA from '@/components/ClosingCTA'
 import Footer from '@/components/Footer'
 import { buildMetadata, SITE_URL } from '@/lib/seo'
 
@@ -50,6 +52,8 @@ export default function HomePage() {
         <HowItWorks lang="sv" />
         <Trust lang="sv" />
         <PricingTeaser lang="sv" />
+        <FAQ lang="sv" />
+        <ClosingCTA lang="sv" />
       </main>
       <Footer lang="sv" />
     </>

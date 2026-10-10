@@ -2,10 +2,80 @@
 
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Mic, FileText, CheckCircle2 } from 'lucide-react'
 
 interface HeroProps {
   lang: 'sv' | 'en'
+}
+
+const LIVE_DEMO_STEPS = {
+  sv: [
+    { icon: Mic, label: 'Spelar in mötet...' },
+    { icon: FileText, label: 'Transkriberar...' },
+    { icon: CheckCircle2, label: 'Sammanfattning klar ✓' },
+  ],
+  en: [
+    { icon: Mic, label: 'Recording the meeting...' },
+    { icon: FileText, label: 'Transcribing...' },
+    { icon: CheckCircle2, label: 'Summary ready ✓' },
+  ],
+}
+
+function LiveDemoBadge({ lang }: { lang: 'sv' | 'en' }) {
+  const steps = LIVE_DEMO_STEPS[lang]
+  const [stepIndex, setStepIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setStepIndex((prev) => (prev + 1) % steps.length)
+    }, 2200)
+    return () => clearInterval(interval)
+  }, [steps.length])
+
+  const current = steps[stepIndex]
+  const Icon = current.icon
+  const isDone = stepIndex === steps.length - 1
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.5 }}
+      className="absolute -bottom-4 left-1/2 -translate-x-1/2 sm:left-auto sm:-translate-x-0 sm:-right-4 sm:bottom-6 bg-white rounded-2xl shadow-xl shadow-primary/15 border border-gray-100 px-4 py-3 flex items-center gap-2.5 whitespace-nowrap"
+    >
+      <span
+        className={`flex items-center justify-center w-7 h-7 rounded-full flex-shrink-0 ${
+          isDone ? 'bg-primary text-white' : 'bg-primary/10 text-primary'
+        }`}
+      >
+        <AnimatePresence mode="wait">
+          <motion.span
+            key={stepIndex}
+            initial={{ opacity: 0, scale: 0.6 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.6 }}
+            transition={{ duration: 0.2 }}
+            className="flex items-center justify-center"
+          >
+            <Icon size={15} />
+          </motion.span>
+        </AnimatePresence>
+      </span>
+      <AnimatePresence mode="wait">
+        <motion.span
+          key={stepIndex}
+          initial={{ opacity: 0, y: 4 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -4 }}
+          transition={{ duration: 0.2 }}
+          className="text-xs sm:text-sm font-medium text-gray-700"
+        >
+          {current.label}
+        </motion.span>
+      </AnimatePresence>
+    </motion.div>
+  )
 }
 
 export default function Hero({ lang }: HeroProps) {
@@ -132,6 +202,7 @@ export default function Hero({ lang }: HeroProps) {
               className="mx-auto rounded-3xl shadow-2xl shadow-primary/10 w-full h-auto"
               priority
             />
+            <LiveDemoBadge lang={lang} />
           </motion.div>
         </div>
       </div>
