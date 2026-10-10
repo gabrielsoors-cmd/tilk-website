@@ -16,7 +16,7 @@ export default function Footer({ lang }: FooterProps) {
       product: 'Produkt',
       company: 'Företag',
       legal: 'Juridiskt',
-      links: { pricing: 'Priser', enterprise: 'Enterprise', compare: 'Jämför', contact: 'Kontakt', privacy: 'Integritetspolicy', terms: 'Användarvillkor' },
+      links: { pricing: 'Priser', enterprise: 'Enterprise', compare: 'Jämför', blog: 'Blogg', contact: 'Kontakt', privacy: 'Integritetspolicy', terms: 'Användarvillkor' },
       contact: { general: 'Allmänt', enterprise: 'Företag' },
       appStoreAlt: 'Ladda ned på App Store',
       builtIn: 'Byggd i Sverige.',
@@ -28,7 +28,7 @@ export default function Footer({ lang }: FooterProps) {
       product: 'Product',
       company: 'Company',
       legal: 'Legal',
-      links: { pricing: 'Pricing', enterprise: 'Enterprise', compare: 'Compare', contact: 'Contact', privacy: 'Privacy Policy', terms: 'Terms of Service' },
+      links: { pricing: 'Pricing', enterprise: 'Enterprise', compare: 'Compare', blog: 'Blog', contact: 'Contact', privacy: 'Privacy Policy', terms: 'Terms of Service' },
       contact: { general: 'General', enterprise: 'Enterprise' },
       appStoreAlt: 'Download on the App Store',
       builtIn: 'Built in Sweden.',
@@ -109,6 +109,9 @@ export default function Footer({ lang }: FooterProps) {
               <li><Link href={`${basePath}/pricing`} className="text-sm sm:text-base text-gray-500 hover:text-primary transition">{t.links.pricing}</Link></li>
               <li><Link href={`${basePath}/enterprise`} className="text-sm sm:text-base text-gray-500 hover:text-primary transition">{t.links.enterprise}</Link></li>
               <li><Link href={`${basePath}/compare`} className="text-sm sm:text-base text-gray-500 hover:text-primary transition">{t.links.compare}</Link></li>
+              {lang === 'sv' && (
+                <li><Link href="/blog" className="text-sm sm:text-base text-gray-500 hover:text-primary transition">{t.links.blog}</Link></li>
+              )}
             </ul>
           </div>
 

@@ -12,6 +12,7 @@ const NAV_LINKS = {
     { href: '/pricing', label: 'Priser' },
     { href: '/compare', label: 'Jämför' },
     { href: '/enterprise', label: 'Enterprise' },
+    { href: '/blog', label: 'Blogg' },
     { href: '/contact', label: 'Kontakt' },
   ],
   en: [
