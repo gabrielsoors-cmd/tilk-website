@@ -96,6 +96,12 @@ export default function Footer({ lang }: FooterProps) {
 
         <div className="border-t border-gray-200 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 text-center sm:text-left">
           <p className="text-xs sm:text-sm text-gray-500">© 2026 Powered by Soors Ventures AB. {t.rights}</p>
+          <button
+            onClick={() => window.dispatchEvent(new Event('open-cookie-settings'))}
+            className="text-xs sm:text-sm text-gray-500 hover:text-primary underline transition"
+          >
+            {lang === 'sv' ? 'Cookie-inställningar' : 'Cookie settings'}
+          </button>
           <p className="text-xs sm:text-sm text-gray-400">{t.builtIn}</p>
         </div>
       </div>

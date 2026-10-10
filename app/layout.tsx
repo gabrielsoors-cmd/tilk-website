@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Script from 'next/script'
 import './globals.css'
 import { Fraunces } from 'next/font/google'
+import CookieConsent from '@/components/CookieConsent'
 
 const fraunces = Fraunces({
   subsets: ['latin'],
@@ -40,6 +41,19 @@ export default function RootLayout({
   return (
     <html lang="sv" className={fraunces.variable}>
       <head>
+        {/* Consent Mode v2 default: deny all before any Google tag loads */}
+        <Script id="consent-default" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('consent', 'default', {
+              'ad_storage': 'denied',
+              'ad_user_data': 'denied',
+              'ad_personalization': 'denied',
+              'analytics_storage': 'denied'
+            });
+          `}
+        </Script>
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-E9TS1S6Q1E"
@@ -54,7 +68,10 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className="bg-bg antialiased">{children}</body>
+      <body className="bg-bg antialiased">
+        {children}
+        <CookieConsent lang="sv" />
+      </body>
     </html>
   )
 }
