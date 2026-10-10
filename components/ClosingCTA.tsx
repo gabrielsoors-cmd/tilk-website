@@ -60,11 +60,12 @@ export default function ClosingCTA({ lang }: ClosingCTAProps) {
             href="https://apps.apple.com/se/app/tilk/id6759267312"
             target="_blank"
             rel="noopener noreferrer"
+            className="flex justify-center"
           >
             <img
               src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
               alt={t.appStoreAlt}
-              className="h-10 sm:h-11 brightness-0 invert hover:opacity-80 transition"
+              className="h-11 sm:h-12 hover:opacity-80 transition"
             />
           </a>
 

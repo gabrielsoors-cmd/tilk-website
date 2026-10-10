@@ -65,6 +65,21 @@ export default function Features({ lang }: FeaturesProps) {
 
   const t = content[lang]
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.07,
+        delayChildren: 0.05,
+      },
+    },
+  }
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 18 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: 'easeOut' } },
+  }
+
   return (
     <section className="py-14 px-4 sm:py-20 sm:px-6 lg:py-24 bg-background">
       <div className="max-w-7xl mx-auto">
@@ -84,12 +99,15 @@ export default function Features({ lang }: FeaturesProps) {
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">{t.subtitle}</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={containerVariants}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+        >
           <motion.div
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
+            variants={cardVariants}
             className="sm:col-span-2 lg:col-span-1 lg:row-span-2 bg-white border border-gray-200 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
           >
             <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-4 sm:mb-5">
@@ -110,10 +128,7 @@ export default function Features({ lang }: FeaturesProps) {
           {t.features.map((feature, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 32 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5, delay: i * 0.06, ease: 'easeOut' }}
+              variants={cardVariants}
               className="bg-white border border-gray-200 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
             >
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-4 sm:mb-5">
@@ -123,7 +138,7 @@ export default function Features({ lang }: FeaturesProps) {
               <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{feature.description}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )

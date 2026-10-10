@@ -42,7 +42,7 @@ function LiveDemoBadge({ lang }: { lang: 'sv' | 'en' }) {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.5 }}
-      className="absolute -bottom-4 left-1/2 -translate-x-1/2 sm:left-auto sm:-translate-x-0 sm:-right-4 sm:bottom-6 bg-white rounded-2xl shadow-xl shadow-primary/15 border border-gray-100 px-4 py-3 flex items-center gap-2.5 whitespace-nowrap"
+      className="absolute bottom-3 left-3 right-3 sm:left-auto sm:right-4 sm:bottom-4 sm:w-auto bg-white rounded-2xl shadow-xl shadow-primary/15 border border-gray-100 px-3.5 py-2.5 sm:px-4 sm:py-3 flex items-center justify-center gap-2.5 sm:whitespace-nowrap"
     >
       <span
         className={`flex items-center justify-center w-7 h-7 rounded-full flex-shrink-0 ${
@@ -192,7 +192,7 @@ export default function Hero({ lang }: HeroProps) {
             initial={{ opacity: 0, scale: 0.97 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
-            className="relative max-w-[200px] sm:max-w-sm lg:max-w-none mx-auto mt-8 lg:mt-0"
+            className="relative max-w-[280px] sm:max-w-sm lg:max-w-none mx-auto mt-10 sm:mt-8 lg:mt-0"
           >
             <Image
               src="/images/tilk-hero-produktivitetskaos.png"
