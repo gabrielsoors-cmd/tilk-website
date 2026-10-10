@@ -16,6 +16,7 @@ export default function Hero({ lang }: HeroProps) {
       description: 'Tilk förvandlar kaos till klarhet – med AI-drivna sammanfattningar på perfekt svenska.',
       cta: 'Prova gratis idag',
       appStoreAlt: 'Ladda ned på App Store',
+      heroImageAlt: 'En hand håller upp Tilk-appen bland en hög av lösa mötesanteckningar – Tilk skapar ordning ur mötes-kaoset',
     },
     en: {
       tagline: 'Say it.',
@@ -23,6 +24,7 @@ export default function Hero({ lang }: HeroProps) {
       description: 'Tilk transforms chaos into clarity – with AI-powered summaries in perfect Swedish.',
       cta: 'Try for free today',
       appStoreAlt: 'Download on the App Store',
+      heroImageAlt: 'A hand holds up the Tilk app above a pile of loose meeting notes – Tilk brings order to meeting chaos',
     },
   }
 
@@ -123,10 +125,10 @@ export default function Hero({ lang }: HeroProps) {
             className="relative max-w-[200px] sm:max-w-sm lg:max-w-none mx-auto mt-8 lg:mt-0"
           >
             <Image
-              src="/images/tilk-templates-mockup.png"
-              alt="Tilk Templates"
-              width={600}
-              height={800}
+              src="/images/tilk-hero-produktivitetskaos.png"
+              alt={t.heroImageAlt}
+              width={1122}
+              height={1402}
               className="mx-auto rounded-3xl shadow-2xl shadow-primary/10 w-full h-auto"
               priority
             />
