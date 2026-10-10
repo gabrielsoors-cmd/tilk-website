@@ -1,10 +1,13 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { buildMetadata } from '@/lib/seo'
 
-export const metadata = {
+export const metadata = buildMetadata({
+  path: 'terms',
+  lang: 'sv',
   title: 'Användarvillkor - Tilk',
   description: 'Läs våra användarvillkor för Tilk-appen.',
-}
+})
 
 export default function TermsPage() {
   return (

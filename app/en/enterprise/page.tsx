@@ -1,11 +1,14 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Image from 'next/image'
+import { buildMetadata } from '@/lib/seo'
 
-export const metadata = {
+export const metadata = buildMetadata({
+  path: 'enterprise',
+  lang: 'en',
   title: 'Enterprise - Tilk',
   description: 'Custom solutions for companies. Custom templates, organization management and dedicated support.',
-}
+})
 
 export default function EnterprisePageEN() {
   return (

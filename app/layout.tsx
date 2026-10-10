@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import { headers } from 'next/headers'
 import './globals.css'
 import { Fraunces } from 'next/font/google'
 import CookieConsent from '@/components/CookieConsent'
+import { SITE_URL } from '@/lib/seo'
 
 const fraunces = Fraunces({
   subsets: ['latin'],
@@ -12,24 +14,18 @@ const fraunces = Fraunces({
   display: 'swap',
 })
 
-
 export const metadata: Metadata = {
-  title: 'Tilk – Say it.',
-  description: 'AI-drivna mötessammanfattningar på perfekt svenska. Var närvarande, inte upptagen med anteckningar.',
-  keywords: 'möten, AI, sammanfattning, transkribering, svenska, anteckningar, produktivitet',
-  authors: [{ name: 'Soors Ventures AB' }],
-  openGraph: {
-    title: 'Tilk – Say it.',
-    description: 'AI-drivna mötessammanfattningar på perfekt svenska.',
-    url: 'https://tilk.app',
-    siteName: 'Tilk',
-    locale: 'sv_SE',
-    type: 'website',
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: 'Tilk - Anteckna med AI byggd för Svenska företag',
+    template: '%s',
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Tilk – Say it.',
-    description: 'AI-drivna mötessammanfattningar på perfekt svenska.',
+  description: 'AI-drivna mötessammanfattningar på perfekt svenska. Var närvarande, inte upptagen med anteckningar.',
+  keywords: 'möten, AI, sammanfattning, transkribering, svenska, anteckningar, produktivitet, svenska företag',
+  authors: [{ name: 'Soors Ventures AB' }],
+  icons: {
+    icon: '/icon.png',
+    apple: '/apple-icon.png',
   },
 }
 
@@ -38,8 +34,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  // Set via middleware.ts so we can correctly set <html lang> and the
+  // cookie banner's language on /en/* pages without a second root layout.
+  const pathname = headers().get('x-pathname') || ''
+  const lang: 'sv' | 'en' = pathname.startsWith('/en') ? 'en' : 'sv'
+
   return (
-    <html lang="sv" className={fraunces.variable}>
+    <html lang={lang} className={fraunces.variable}>
       <head>
         {/* Consent Mode v2 default: deny all before any Google tag loads */}
         <Script id="consent-default" strategy="beforeInteractive">
@@ -68,9 +69,9 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className="bg-bg antialiased">
+      <body className="bg-background antialiased">
         {children}
-        <CookieConsent lang="sv" />
+        <CookieConsent lang={lang} />
       </body>
     </html>
   )

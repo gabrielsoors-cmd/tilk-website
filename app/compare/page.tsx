@@ -1,10 +1,13 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { buildMetadata } from '@/lib/seo'
 
-export const metadata = {
+export const metadata = buildMetadata({
+  path: 'compare',
+  lang: 'sv',
   title: 'Jämför Tilk med andra tjänster - Tilk',
   description: 'Se hur Tilk står sig mot Otter.ai, Fireflies, Fathom, PLAUD och Microsoft Teams för svenska möten.',
-}
+})
 
 export default function ComparePage() {
   const features = [

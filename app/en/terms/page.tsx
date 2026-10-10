@@ -1,10 +1,13 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { buildMetadata } from '@/lib/seo'
 
-export const metadata = {
+export const metadata = buildMetadata({
+  path: 'terms',
+  lang: 'en',
   title: 'Terms of Service - Tilk',
   description: 'Read our terms of service for the Tilk app.',
-}
+})
 
 export default function TermsPageEN() {
   return (

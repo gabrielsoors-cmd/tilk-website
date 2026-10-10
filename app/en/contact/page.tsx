@@ -1,11 +1,14 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Image from 'next/image'
+import { buildMetadata } from '@/lib/seo'
 
-export const metadata = {
+export const metadata = buildMetadata({
+  path: 'contact',
+  lang: 'en',
   title: 'Contact - Tilk',
   description: 'Contact us with questions about Tilk. We respond within 24 hours.',
-}
+})
 
 export default function ContactPageEN() {
   return (

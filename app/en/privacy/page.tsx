@@ -1,10 +1,13 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { buildMetadata } from '@/lib/seo'
 
-export const metadata = {
+export const metadata = buildMetadata({
+  path: 'privacy',
+  lang: 'en',
   title: 'Privacy Policy - Tilk',
   description: 'Read about how Tilk collects, uses and protects your personal data.',
-}
+})
 
 export default function PrivacyPageEN() {
   return (

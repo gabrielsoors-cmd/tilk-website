@@ -1,11 +1,14 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
+import { buildMetadata } from '@/lib/seo'
 
-export const metadata = {
+export const metadata = buildMetadata({
+  path: 'pricing',
+  lang: 'en',
   title: 'Pricing - Tilk',
   description: 'Choose the plan that fits your needs. From free to Enterprise.',
-}
+})
 
 export default function PricingPageEN() {
   const plans = [
