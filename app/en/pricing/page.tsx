@@ -17,7 +17,7 @@ export default function PricingPageEN() {
       ideal: 'Perfect for testing Tilk',
       features: [
         '60 minutes recording (total)',
-        'All 5 standard templates',
+        'All 6 standard templates',
         'Apple Watch integration',
         'Perfect Swedish transcription',
         'AI summaries',
@@ -35,7 +35,7 @@ export default function PricingPageEN() {
       ideal: 'For 1-2 meetings per week',
       features: [
         '300 minutes/month',
-        '1 standard template to choose',
+        'All 6 standard templates',
         'Perfect Swedish transcription',
         'AI summaries',
         'Email support',
@@ -53,7 +53,7 @@ export default function PricingPageEN() {
       ideal: 'For daily meetings',
       features: [
         '1000 minutes/month',
-        'All 5 standard templates',
+        'All 6 standard templates',
         'Apple Watch integration',
         'Perfect Swedish transcription',
         'AI summaries',
@@ -120,55 +120,55 @@ export default function PricingPageEN() {
   return (
     <>
       <Navbar />
-      <main className="pt-32 pb-20 px-6 bg-dark min-h-screen">
+      <main className="pt-28 pb-16 px-4 sm:pt-32 sm:pb-20 sm:px-6 bg-background min-h-screen">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold mb-4">Pricing</h1>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          <div className="text-center mb-10 sm:mb-16">
+            <h1 className="font-genty text-3xl sm:text-5xl md:text-6xl font-medium mb-3 sm:mb-4 text-gray-900">Pricing</h1>
+            <p className="text-base sm:text-xl text-gray-600 max-w-2xl mx-auto">
               Choose the plan that fits your needs. Change or cancel anytime.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 mb-14 sm:mb-20">
             {plans.map((plan, i) => (
               <div
                 key={i}
-                className={`relative rounded-card p-8 transition-all duration-300 flex flex-col ${
+                className={`relative rounded-card p-6 sm:p-8 transition-all duration-300 flex flex-col ${
                   plan.highlight
-                    ? 'bg-primary shadow-glow scale-105 border-2 border-primary'
-                    : 'bg-darkCard border border-darkBorder hover:border-primary/50'
+                    ? 'bg-primary text-white shadow-xl shadow-primary/20 sm:scale-105'
+                    : 'bg-white border border-gray-200 hover:border-primary/40 hover:shadow-lg'
                 }`}
               >
                 {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-primary px-4 py-1 rounded-full text-sm font-bold">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-primary px-4 py-1 rounded-full text-sm font-bold shadow">
                     Most Popular
                   </div>
                 )}
 
-                <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+                <h3 className={`text-xl sm:text-2xl font-bold mb-2 ${plan.highlight ? 'text-white' : 'text-gray-900'}`}>{plan.name}</h3>
                 <div className="mb-4">
-                  <span className="text-4xl font-bold">{plan.price}</span>
+                  <span className={`text-3xl sm:text-4xl font-bold ${plan.highlight ? 'text-white' : 'text-gray-900'}`}>{plan.price}</span>
                   {plan.period && (
-                    <span className={plan.highlight ? 'text-white/80' : 'text-gray-400'}>
+                    <span className={plan.highlight ? 'text-white/80' : 'text-gray-500'}>
                       {plan.period}
                     </span>
                   )}
                 </div>
-                <p className={`text-sm mb-6 ${plan.highlight ? 'text-white/90' : 'text-gray-400'}`}>
+                <p className={`text-sm mb-6 ${plan.highlight ? 'text-white/90' : 'text-gray-500'}`}>
                   {plan.minutes}
                 </p>
 
-                <p className={`text-xs italic mb-6 ${plan.highlight ? 'text-white/70' : 'text-gray-500'}`}>
+                <p className={`text-xs italic mb-6 ${plan.highlight ? 'text-white/70' : 'text-gray-400'}`}>
                   {plan.ideal}
                 </p>
 
                 <ul className="space-y-3 mb-8 flex-grow">
                   {plan.features.map((feature, j) => (
                     <li key={j} className="flex items-start gap-2">
-                      <svg className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.highlight ? 'text-white' : 'text-primary'}`} fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
-                      <span className={plan.highlight ? 'text-white/90' : 'text-gray-300'}>
+                      <span className={`text-sm sm:text-base ${plan.highlight ? 'text-white/90' : 'text-gray-600'}`}>
                         {feature}
                       </span>
                     </li>
@@ -192,29 +192,29 @@ export default function PricingPageEN() {
           </div>
 
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            <h2 className="font-genty text-2xl sm:text-3xl md:text-4xl font-medium text-center mb-8 sm:mb-12 text-gray-900">
               FAQ
             </h2>
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               {faqs.map((faq, i) => (
-                <div key={i} className="bg-darkCard border border-darkBorder rounded-card p-6">
-                  <h3 className="font-bold text-lg mb-2">{faq.question}</h3>
-                  <p className="text-gray-400 leading-relaxed">{faq.answer}</p>
+                <div key={i} className="bg-white border border-gray-200 rounded-card p-5 sm:p-6">
+                  <h3 className="font-bold text-base sm:text-lg mb-2 text-gray-900">{faq.question}</h3>
+                  <p className="text-gray-600 leading-relaxed text-sm sm:text-base">{faq.answer}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="mt-20 text-center">
-            <h2 className="text-3xl font-bold mb-4">Ready to get started?</h2>
-            <p className="text-gray-400 mb-8 max-w-xl mx-auto">
+          <div className="mt-14 sm:mt-20 text-center">
+            <h2 className="font-genty text-2xl sm:text-3xl font-medium mb-4 text-gray-900">Ready to get started?</h2>
+            <p className="text-gray-600 mb-8 max-w-xl mx-auto">
               Download Tilk for free and start saving time on your meeting notes today.
             </p>
             <Link
               href="https://apps.apple.com/app/tilk"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary/90 transition shadow-glow"
+              className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary/90 transition hover:shadow-lg hover:shadow-primary/30"
             >
               Try for free today →
             </Link>
