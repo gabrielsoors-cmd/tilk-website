@@ -38,7 +38,7 @@ export default function PricingPageEN() {
       ideal: 'For 1-2 meetings per week',
       features: [
         '300 minutes/month',
-        'The "Quick summary" template',
+        'The "Automatic summary" template',
         'Perfect Swedish transcription',
         'Editable summaries',
         'Email support',

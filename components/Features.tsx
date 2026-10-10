@@ -37,7 +37,7 @@ export default function Features({ lang }: FeaturesProps) {
         icon: FileText,
         title: '6 professionella mallar',
         description: 'Välj den mall som passar mötet – Tilk formaterar automatiskt.',
-        items: ['Kort sammanfattning', 'Komplett mötesanteckning', 'Intervju & Rekrytering', 'Föreläsning & Utbildning', 'Kundmöte & Säljsamtal', 'Mötesprotokoll med agenda'],
+        items: ['Automatisk sammanfattning', 'Komplett mötesanteckning', 'Intervju & Rekrytering', 'Föreläsning & Utbildning', 'Kundmöte & Säljsamtal', 'Mötesprotokoll med agenda'],
       },
     },
     en: {
@@ -58,7 +58,7 @@ export default function Features({ lang }: FeaturesProps) {
         icon: FileText,
         title: '6 professional templates',
         description: 'Pick the template that fits the meeting – Tilk formats it automatically.',
-        items: ['Quick summary', 'Complete meeting notes', 'Interview & Recruitment', 'Lecture & Education', 'Client meeting & Sales call', 'Meeting minutes with agenda'],
+        items: ['Automatic summary', 'Complete meeting notes', 'Interview & Recruitment', 'Lecture & Education', 'Client meeting & Sales call', 'Meeting minutes with agenda'],
       },
     },
   }

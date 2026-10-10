@@ -93,7 +93,7 @@ export default function PricingTeaser({ lang }: PricingTeaserProps) {
       subtitle: 'Kom igång gratis. Uppgradera när du behöver mer.',
       plans: [
         { name: 'Free', price: '0 kr', numericMinutes: 60, minuteLabel: 'min totalt', period: undefined, highlight: false, features: ['Provmöte på 60 minuter', 'Alla 6 mallar', 'Inspelning från iPhone & Apple Watch'] },
-        { name: 'Basic', price: '49 kr', numericMinutes: 300, minuteLabel: 'min/mån', period: '/mån', highlight: false, features: ['300 min/mån', 'Endast Kort sammanfattning', 'Redigerbara sammanfattningar'] },
+        { name: 'Basic', price: '49 kr', numericMinutes: 300, minuteLabel: 'min/mån', period: '/mån', highlight: false, features: ['300 min/mån', 'Endast Automatisk sammanfattning', 'Redigerbara sammanfattningar'] },
         { name: 'Pro', price: '149 kr', numericMinutes: 1000, minuteLabel: 'min/mån', period: '/mån', highlight: true, features: ['1000 min/mån', 'Mappar med AI-insikter', 'Anpassade PDF-dokument'] },
         { name: 'Enterprise', price: 'Från 499 kr', numericMinutes: -1, minuteLabel: 'Obegränsad tid', period: '/mån', highlight: false, features: ['Obegränsad inspelningstid', 'Egna mallar för organisationen', 'Digitala möten (Teams, Meet, Zoom)'] },
       ],
@@ -105,7 +105,7 @@ export default function PricingTeaser({ lang }: PricingTeaserProps) {
       subtitle: 'Start for free. Upgrade when you need more.',
       plans: [
         { name: 'Free', price: '0 kr', numericMinutes: 60, minuteLabel: 'min total', period: undefined, highlight: false, features: ['60-minute trial meeting', 'All 6 templates', 'Recording from iPhone & Apple Watch'] },
-        { name: 'Basic', price: '49 kr', numericMinutes: 300, minuteLabel: 'min/month', period: '/month', highlight: false, features: ['300 min/month', 'Quick summary template only', 'Editable summaries'] },
+        { name: 'Basic', price: '49 kr', numericMinutes: 300, minuteLabel: 'min/month', period: '/month', highlight: false, features: ['300 min/month', 'Automatic summary template only', 'Editable summaries'] },
         { name: 'Pro', price: '149 kr', numericMinutes: 1000, minuteLabel: 'min/month', period: '/month', highlight: true, features: ['1000 min/month', 'Folders with AI insights', 'Custom PDF documents'] },
         { name: 'Enterprise', price: 'From 499 kr', numericMinutes: -1, minuteLabel: 'Unlimited time', period: '/month', highlight: false, features: ['Unlimited recording time', 'Custom templates for your org', 'Digital meetings (Teams, Meet, Zoom)'] },
       ],

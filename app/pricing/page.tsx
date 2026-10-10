@@ -38,7 +38,7 @@ export default function PricingPage() {
       ideal: 'För dig med få möten',
       features: [
         '300 minuter/månad',
-        'Mallen "Kort sammanfattning"',
+        'Mallen "Automatisk sammanfattning"',
         'Perfekt svenska transkribering',
         'Redigerbara sammanfattningar',
         'Email support',
