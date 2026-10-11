@@ -103,7 +103,9 @@ export default function Navbar() {
           </div>
 
           <a
-            href="#pricing"
+            href="https://apps.apple.com/se/app/tilk/id6759267312"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden md:inline-flex items-center justify-center bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary/90 transition"
           >
             {isEnglish ? 'Try for free' : 'Prova gratis'}
@@ -142,7 +144,9 @@ export default function Navbar() {
               ))}
 
               <a
-                href="#pricing"
+                href="https://apps.apple.com/se/app/tilk/id6759267312"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setMenuOpen(false)}
                 className="mt-4 inline-flex items-center justify-center bg-primary text-white px-6 py-3 rounded-full text-base font-semibold hover:bg-primary/90 transition"
               >

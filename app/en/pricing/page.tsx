@@ -26,7 +26,7 @@ export default function PricingPageEN() {
         'AI summaries',
       ],
       cta: 'Download free',
-      ctaLink: 'https://apps.apple.com/app/tilk',
+      ctaLink: 'https://apps.apple.com/se/app/tilk/id6759267312',
       highlight: false,
       popular: false,
     },
@@ -44,7 +44,7 @@ export default function PricingPageEN() {
         'Email support',
       ],
       cta: 'Get started',
-      ctaLink: 'https://apps.apple.com/app/tilk',
+      ctaLink: 'https://apps.apple.com/se/app/tilk/id6759267312',
       highlight: false,
       popular: false,
     },
@@ -64,7 +64,7 @@ export default function PricingPageEN() {
         'Priority support',
       ],
       cta: 'Get started',
-      ctaLink: 'https://apps.apple.com/app/tilk',
+      ctaLink: 'https://apps.apple.com/se/app/tilk/id6759267312',
       highlight: true,
       popular: true,
     },
@@ -216,7 +216,7 @@ export default function PricingPageEN() {
               Download Tilk for free and start saving time on your meeting notes today.
             </p>
             <Link
-              href="https://apps.apple.com/app/tilk"
+              href="https://apps.apple.com/se/app/tilk/id6759267312"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary/90 transition hover:shadow-lg hover:shadow-primary/30"
