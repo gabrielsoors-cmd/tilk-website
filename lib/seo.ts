@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-export const SITE_URL = 'https://tilk.app'
+export const SITE_URL = 'https://www.tilk.app'
 export const SITE_NAME = 'Tilk'
 
 interface PageSeoInput {
