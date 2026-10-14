@@ -24,7 +24,10 @@ export const metadata: Metadata = {
   keywords: 'möten, AI, sammanfattning, transkribering, svenska, anteckningar, produktivitet, svenska företag',
   authors: [{ name: 'Soors Ventures AB' }],
   icons: {
-    icon: '/icon.png',
+    icon: [
+      { url: '/favicon-48.png', sizes: '48x48', type: 'image/png' },
+      { url: '/favicon-192.png', sizes: '192x192', type: 'image/png' },
+    ],
     apple: '/apple-icon.png',
   },
 }

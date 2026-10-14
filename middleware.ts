@@ -19,5 +19,5 @@ export function middleware(request: NextRequest) {
 export const config = {
   // Skip Next.js internals and static files - we only need the pathname
   // for actual pages.
-  matcher: ['/((?!_next/static|_next/image|favicon.ico|icon.png|apple-icon.png|images/).*)'],
+  matcher: ['/((?!_next/static|_next/image|favicon.ico|favicon-|icon.png|apple-icon.png|opengraph-image|images/).*)'],
 }
