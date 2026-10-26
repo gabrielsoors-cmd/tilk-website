@@ -136,8 +136,8 @@ export default function Hero({ lang }: HeroProps) {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ y: 16 }}
+            animate={{ y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
             className="text-center lg:text-left"
           >
@@ -149,7 +149,7 @@ export default function Hero({ lang }: HeroProps) {
               className="mb-3 sm:mb-8 mx-auto lg:mx-0"
             />
 
-            <p className="text-xl sm:text-2xl italic text-primary/70 mb-4 sm:mb-6 min-h-[1.75rem] font-genty">
+            <p className="text-xl sm:text-2xl italic text-primary/90 mb-4 sm:mb-6 min-h-[1.75rem] font-genty">
               {displayedTagline}
               {!typingDone && (
                 <span className="inline-block w-0.5 h-5 sm:h-6 bg-primary ml-0.5 align-middle animate-pulse" />
@@ -184,15 +184,17 @@ export default function Hero({ lang }: HeroProps) {
                 <img
                   src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
                   alt={t.appStoreAlt}
-                  className="h-11 sm:h-12 hover:opacity-80 transition"
+                  width={132}
+                  height={44}
+                  className="h-11 sm:h-12 w-auto hover:opacity-80 transition"
                 />
               </a>
             </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.97 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ scale: 0.97 }}
+            animate={{ scale: 1 }}
             transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
             className="relative max-w-[280px] sm:max-w-sm lg:max-w-none mx-auto mt-10 sm:mt-8 lg:mt-0"
           >
@@ -201,6 +203,7 @@ export default function Hero({ lang }: HeroProps) {
               alt={t.heroImageAlt}
               width={1122}
               height={1402}
+              sizes="(max-width: 640px) 280px, (max-width: 1024px) 384px, 560px"
               className="mx-auto rounded-3xl shadow-2xl shadow-primary/10 w-full h-auto"
               priority
             />

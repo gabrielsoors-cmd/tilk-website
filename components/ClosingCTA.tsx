@@ -65,11 +65,13 @@ export default function ClosingCTA({ lang }: ClosingCTAProps) {
             <img
               src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
               alt={t.appStoreAlt}
-              className="h-11 sm:h-12 hover:opacity-80 transition"
+              width={132}
+              height={44}
+              className="h-11 sm:h-12 w-auto hover:opacity-80 transition"
             />
           </a>
 
-          <p className="text-xs sm:text-sm text-white/60 mt-1">{t.note}</p>
+          <p className="text-xs sm:text-sm text-white/80 mt-1">{t.note}</p>
         </div>
       </motion.div>
     </section>

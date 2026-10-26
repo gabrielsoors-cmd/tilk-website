@@ -62,7 +62,9 @@ export default function Footer({ lang }: FooterProps) {
               <img
                 src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
                 alt={t.appStoreAlt}
-                className="h-9 sm:h-10 hover:opacity-80 transition"
+                width={108}
+                height={36}
+                className="h-9 sm:h-10 w-auto hover:opacity-80 transition"
               />
             </a>
 
@@ -120,11 +122,11 @@ export default function Footer({ lang }: FooterProps) {
             <ul className="space-y-3.5 sm:space-y-4">
               <li><Link href={`${basePath}/contact`} className="text-sm sm:text-base text-gray-500 hover:text-primary transition">{t.links.contact}</Link></li>
               <li>
-                <span className="block text-xs text-gray-400 mb-0.5">{t.contact.general}</span>
+                <span className="block text-xs text-gray-500 mb-0.5">{t.contact.general}</span>
                 <a href="mailto:contact@tilk.app" className="text-sm sm:text-base text-gray-500 hover:text-primary transition">contact@tilk.app</a>
               </li>
               <li>
-                <span className="block text-xs text-gray-400 mb-0.5">{t.contact.enterprise}</span>
+                <span className="block text-xs text-gray-500 mb-0.5">{t.contact.enterprise}</span>
                 <a href="mailto:enterprise@tilk.app" className="text-sm sm:text-base text-gray-500 hover:text-primary transition">enterprise@tilk.app</a>
               </li>
             </ul>
@@ -147,7 +149,7 @@ export default function Footer({ lang }: FooterProps) {
           >
             {lang === 'sv' ? 'Cookie-inställningar' : 'Cookie settings'}
           </button>
-          <p className="text-xs sm:text-sm text-gray-400 order-2 sm:order-3">{t.builtIn}</p>
+          <p className="text-xs sm:text-sm text-gray-500 order-2 sm:order-3">{t.builtIn}</p>
         </div>
       </div>
     </footer>

@@ -32,6 +32,7 @@ export default function ContactPageEN() {
                 alt="A calm conversation over coffee after a meeting"
                 width={1122}
                 height={1402}
+                sizes="(max-width: 1024px) 100vw, 560px"
                 className="rounded-3xl shadow-xl shadow-primary/10 w-full h-auto"
               />
             </div>

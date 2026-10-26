@@ -53,6 +53,7 @@ export default function EnterprisePageEN() {
                   alt="Two colleagues in a business meeting documented by Tilk"
                   width={1122}
                   height={1402}
+                  sizes="(max-width: 1024px) 100vw, 560px"
                   className="rounded-3xl shadow-xl shadow-primary/10 w-full h-auto"
                 />
               </div>
@@ -136,6 +137,7 @@ export default function EnterprisePageEN() {
                   alt="Tilk on Apple Watch during an on-the-go meeting"
                   width={1376}
                   height={768}
+                  sizes="(max-width: 1024px) 100vw, 560px"
                   className="rounded-3xl shadow-xl shadow-primary/10 w-full h-auto"
                 />
               </div>
