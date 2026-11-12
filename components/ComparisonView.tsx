@@ -57,7 +57,7 @@ export default function ComparisonView({ lang }: { lang: Lang }) {
       ? ['Tilk skriver inte ut vem som sa vad när du spelar in själv.', 'Appen finns bara för iPhone och Apple Watch.', 'Tilk har inga kopplingar till CRM- eller projektverktyg.']
       : ['Tilk does not label who said what when you record yourself.', 'The app is only available for iPhone and Apple Watch.', 'Tilk has no integrations with CRM or project tools.'],
     more: sv ? 'Läs mer: ' : 'Read more: ',
-    blog: sv ? 'Varför välja Tilk? Ett ärligt svar' : 'Why choose Tilk? (Swedish)',
+    blog: sv ? 'Från möte till färdig PDF på några minuter' : 'Why choose Tilk? (Swedish)',
     cta: sv ? 'Prova Tilk gratis i 60 minuter' : 'Try Tilk free for 60 minutes',
   }
 
