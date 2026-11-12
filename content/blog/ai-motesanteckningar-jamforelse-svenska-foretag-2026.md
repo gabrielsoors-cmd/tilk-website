@@ -21,7 +21,7 @@ Källor: [Sifted – "AI notetaking startup Granola hits unicorn status"](https:
 
 Så här ser landskapet ut i stora drag, baserat på respektive tjänsts egna produktbeskrivningar:
 
-- **Otter.ai och Fireflies** – breda, Nordamerika-fokuserade plattformar med stark integration mot Zoom/Teams/Meet, men begränsat stöd för svensk transkribering och ingen lokal prissättning i kronor.
+- **Otter.ai och Fireflies** – breda, Nordamerika-fokuserade plattformar med stark integration mot Zoom/Teams/Meet. Fireflies listar svenska bland sina språk, och Otter har meddelat att svenska är på väg (TechCrunch, 9 november 2026).
 - **Fathom** – fokuserad på enkelhet och gratis grundutbud, men liksom ovan byggd och optimerad för engelska.
 - **Granola** – stark på att strukturera egna anteckningar kombinerat med ljud snarare än att enbart transkribera, men engelskspråkig och riktad mot anglosaxiska, Zoom-tunga arbetsplatser.
 - **PLAUD** – hårdvaru-först: en fysisk pryl som krävs för inspelning, vilket gör den till ett mindre naturligt val för någon som redan har en iPhone eller Apple Watch i fickan.
